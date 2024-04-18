@@ -1,7 +1,5 @@
-import Icon from "feather-icons-react";
 import { Suspense } from "react";
 
-import { Form } from "@/components/Form";
 import { MoviesList } from "@/components/MoviesList";
 import { Header } from "@/components/Header";
 
