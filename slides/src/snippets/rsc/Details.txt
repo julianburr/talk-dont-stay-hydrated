@@ -2,10 +2,10 @@ import markdown from "markdown-it";
 import moment from "moment";
 
 async function DetailsPage({ id }) {
-  const data = await fetchData({ id: params.movieId });
+  const data = await fetchData({ id });
 
   const year = moment(data.short.datePublished).format("YYYY");
-  const description = markdown().render(data.short.review.reviewBody);
+  const description = markdown().render(data.short.plot);
 
   return (
     <Main>

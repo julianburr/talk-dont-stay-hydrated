@@ -23,6 +23,7 @@ import { BrowserContent } from "@/components/browser/Content";
 import { rscNetwork } from "@/devtools/network/rscNetwork";
 import { craNetwork } from "@/devtools/network/craNetwork";
 import { SkeletonView } from "@/components/notflix/SkeletonView";
+import { HydrationError } from "@/components/browser/HydrationError";
 
 type Era = "html" | "ajax" | "spa" | "ssr" | "rsc";
 
@@ -54,7 +55,7 @@ export const contents: Content[] = [
   },
 
   // AJAX
-  { era: "ajax", content: <Title>AJAX & jQuery</Title> },
+  { era: "ajax", content: <Title>JS & jQuery</Title> },
   { era: "ajax", content: <Window title="Internet Explorer" /> },
   {
     era: "ajax",
@@ -102,6 +103,14 @@ export const contents: Content[] = [
     content: (
       <Window title="Chrome">
         <BrowserContent era="ssr" hydrated />
+      </Window>
+    ),
+  },
+  {
+    era: "ssr",
+    content: (
+      <Window title="Chrome">
+        <HydrationError />
       </Window>
     ),
   },
@@ -185,14 +194,6 @@ export const contents: Content[] = [
     content: (
       <Window title="VS Code">
         <Code code={SsrDetails} highlightLines={[5, 6]} />
-      </Window>
-    ),
-  },
-  {
-    era: "rsc",
-    content: (
-      <Window title="VS Code">
-        <Code code={SsrDetails} highlightLines={[1, 2]} />
       </Window>
     ),
   },
@@ -371,6 +372,34 @@ export const contents: Content[] = [
     era: "rsc",
     content: (
       <Window title="VS Code">
+        <Code
+          code={AstroDetails}
+          highlightLines={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+        />
+      </Window>
+    ),
+  },
+  {
+    era: "rsc",
+    content: (
+      <Window title="VS Code">
+        <Code code={AstroDetails} highlightLines={[12, 13, 14, 15]} />
+      </Window>
+    ),
+  },
+  {
+    era: "rsc",
+    content: (
+      <Window title="VS Code">
+        <Code code={AstroDetails} highlightLines={[17, 18, 19]} />
+      </Window>
+    ),
+  },
+
+  {
+    era: "rsc",
+    content: (
+      <Window title="VS Code">
         <Code code={QwikDetails} />
       </Window>
     ),
@@ -379,7 +408,23 @@ export const contents: Content[] = [
     era: "rsc",
     content: (
       <Window title="VS Code">
+        <Code code={QwikDetails} highlightLines={[4, 5, 6, 7, 8, 9]} />
+      </Window>
+    ),
+  },
+  {
+    era: "rsc",
+    content: (
+      <Window title="VS Code">
         <Code code={QwikLikeButton} />
+      </Window>
+    ),
+  },
+  {
+    era: "rsc",
+    content: (
+      <Window title="VS Code">
+        <Code code={QwikLikeButton} highlightLines={[7, 8, 9]} />
       </Window>
     ),
   },

@@ -23,7 +23,7 @@ const Container = styled("div", {
 
 function Desk() {
   const { slide } = useSlide();
-  return <Container visible={slide !== 0} />;
+  return <Container visible />;
 }
 
 export { Desk };

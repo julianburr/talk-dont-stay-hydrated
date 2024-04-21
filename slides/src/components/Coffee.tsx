@@ -54,10 +54,10 @@ const CoffeeCup = styled(CoffeeCupSvg, {
 });
 
 export function Coffee({ contents }: any) {
-  const { era } = useSlide(contents);
+  const { era, slide } = useSlide(contents);
 
   const mugVisible = !!era;
-  const mugLeft = !["html", "ajax"].includes(era);
+  const mugLeft = !(["html", "ajax"].includes(era) || slide === 0);
 
   const cupLeft = ["rsc"].includes(era)
     ? "full"

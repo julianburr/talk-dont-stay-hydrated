@@ -1,9 +1,9 @@
 import markdown from "markdown-it";
 import moment from "moment";
 
-function DetailsPage() {
+function DetailsPage({ data }) {
   const year = moment(data.short.datePublished).format("YYYY");
-  const description = markdown().render(data.short.review.reviewBody);
+  const description = markdown().render(data.short.plot);
   return (
     <Main>
       <Poster data={data} />

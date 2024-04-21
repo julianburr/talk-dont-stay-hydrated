@@ -6,7 +6,7 @@ const id = Astro.params.movieId;
 const movie = await fetchMovie(id);
 
 const year = moment(data.short.datePublished).format("YYYY");
-const description = markdown().render(data.short.review.reviewBody);
+const description = markdown().render(data.short.plot);
 ---
 
 <Main>
