@@ -18,6 +18,7 @@ function ClientKeyboardController({ max }: any) {
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
+      console.log("handleKeyDown", { e });
       if (e.key === "ArrowLeft") {
         setSlide(Math.max(slide - 1, 0));
       } else if (e.key === "ArrowRight" || e.key === " ") {
